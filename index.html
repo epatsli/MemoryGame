@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+</style>
+
 <head>
     <meta charset="UTF-8">
-    <title>JSTK</title>
+    <title>Memory game</title>
+    <link rel="stylesheet" href="css/app.css">
+
 </head>
 <body>
-<h1>JSTK</h1>
-<button onclick="controller.startGame()">button</buttononclick>
-    <script src="js/game.js"></script>
+<header><h2>Memory game</h2></header>
+
+<input type="number" id="numberPieces" min="4" value="4">
+<button class="button">Enter</button>
+<input type="submit" value="Submit">
+<br>
+<br>
+<button class="button", onclick="controller.startGame()">Highlight</button>
+    <script src="MemoryGame/game.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+'use strict'
 var view = (function () {
     var getInitialNumberOfPieces = function () {
         //donm

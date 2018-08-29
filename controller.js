@@ -1,3 +1,4 @@
+'use strict'
 var controller = function () {
     var startGame = function () {
         var initialNumberOfPieces = view.getInitialNumberOfPieces();

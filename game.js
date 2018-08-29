@@ -1,6 +1,7 @@
+'use strict'
 var game = (function () {
 
-    var initialNumberOfPieces = 5,
+    var initialNumberOfPieces = 4,
         currentNumberOfPieces,
         startGame = function (config) {
             if (config && config.numberOfPieces) {

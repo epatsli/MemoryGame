@@ -1,0 +1,65 @@
+
+body {
+    background: #D3D3D3;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+}
+
+.header {
+    background-color: #696969;
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=submit] {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    font-family: 'Permanent Marker', cursive;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #696969;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+input:hover[type=submit]{background-color: #3e8e41}
+input:active[type=submit]{
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.button {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        font-family: 'Permanent Marker', cursive;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #696969;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+input[type="number"] {
+    width: 80px;
+    margin-bottom: 10px;
+    display: flex;
+
+}
