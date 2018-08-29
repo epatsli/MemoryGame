@@ -1,4 +1,11 @@
 'use strict'
+
+var Piece = function (isPieceToGuess, pieceNumber) {
+    this.toGuess = isPieceToGuess;
+    this.pieceIsGuessed = false;
+    this.pieceNumber = pieceNumber;
+}
+
 var game = (function () {
 
     var initialNumberOfPieces = 4,
