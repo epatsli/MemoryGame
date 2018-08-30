@@ -5,7 +5,7 @@ var view = (function () {
       var initialNumber=document.getElementById("initialNumberOfPieces").value;
       if (initialNumber<4) {
           initialNumber=4;
-          document.getElementById('initialNumberOfPieces').textContent = initialNumber.toString();
+          document.getElementById('initialNumberOfPieces').value = "4";
       }
         //donm
         return initialNumber;
