@@ -9,7 +9,7 @@ var controller = function () {
         });
         view.renderPieces(game.getPieces());
         highlight();
-        view.print(game.getPieces());
+        view.printAndAddClick(game.getPieces());
        // alert(customerNumberPieces.getAttribute("value"));
     },
 

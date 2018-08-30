@@ -40,9 +40,9 @@ var view = (function () {
         }
         },
 
-      print=function(pieces){
+      printAndAddClick=function(pieces){
           setTimeout(function(){printBlack(pieces)}, 1000*getTime());
-          addClick();
+          setTimeout(function(){addClick()}, 1000*getTime());
       },
 
 
@@ -78,7 +78,7 @@ var view = (function () {
         'highlight': highlight,
         'giveNewParty': giveNewParty,
         'addPiece': addPiece,
-        'print': print,
+        'printAndAddClick': printAndAddClick,
         'addClick': addClick
 
     }
