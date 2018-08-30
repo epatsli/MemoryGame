@@ -9,7 +9,6 @@ var controller = function () {
         });
         view.renderPieces(state);
         view.highlight(state);
-       // highlight();
         view.printAndAddClick(state);
        // alert(customerNumberPieces.getAttribute("value"));
     },
@@ -17,27 +16,31 @@ var controller = function () {
     addPiece = function () {
         view.addPiece();
     },
-
-
-/*
-    highlight = function () {
-        view.highlight(game.getPieces());
-    },
-*/
-
     checkClick = function (id) {
-
-        alert("Hello! I am an alert box!!" + id);
+        var initialNumber;
+       // alert("Hello! I am an alert box!!" + id);
         if (game.checkClickedPiece(id)) {
             view.checkCorrectPieces(id, true);
 
+            if (game.getAmountToGuess()===0){ //===game.getCorrectPieces()) {
+                initialNumber = view.getInitialNumberOfPieces();
+                initialNumber++;
+                document.getElementById('initialNumberOfPieces').value = initialNumber;
+                //  addPiece();
+                controller.startGame();
+            }
+            else{
+                view.addClick();
+            }
 
 
         }
-        else{ view.checkCorrectPieces(id,false);}
-       // view.checkCorrectPieces(id, game.checkClickedPiece(id));
+        else{ view.checkCorrectPieces(id,false);
+            setTimeout(function () {
+                controller.startGame();
+            }, 1000);
+        }
 
-     //   view.correct(game.getPieces());
     };
 
     return {

@@ -72,26 +72,15 @@ var view = (function () {
         }
     },
     checkCorrectPieces = function (id,click) {
-      var initialNumber;
+
         if (click) {
          //   document.getElementById(i).classList.add('correct');
             viewPieces[id].setAttribute('style', 'background-color: #00FF00');
-            if (game.getAmountToGuess()===0){ //===game.getCorrectPieces()) {
-                initialNumber = getInitialNumberOfPieces();
-                initialNumber++;
-                document.getElementById('initialNumberOfPieces').value = initialNumber;
-              //  addPiece();
-                controller.startGame();
-            }
-        else{
-                addClick();
-            }}
+      }
         else {
            // document.getElementById(i).classList.add('incorrect');
             viewPieces[id].setAttribute('style', 'background-color: #FF0000');
-            setTimeout(function () {
-                controller.startGame();
-            }, 1000);
+
         }
     };
 
