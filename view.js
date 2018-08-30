@@ -35,8 +35,25 @@ var view = (function () {
                 viewPieces[i].setAttribute('style', 'background-color: #0000FF');
             }
         }
+       // alert('Hello '+getTime());
+       // print(pieces);
+        },
 
-    },
+      print=function(pieces){
+          setTimeout(function(){printBlack(pieces)}, 1000*getTime());
+      },
+
+
+      printBlack = function (pieces) {
+          var i;
+          for (i = 0; i < pieces.length; i++) {
+                  viewPieces[i].setAttribute('style', 'background-color: #000000');
+          }
+      },
+
+      getTime = function () {
+          return document.getElementById('time').value;
+      },
 
     giveNewParty = function () {
         var pieces = document.getElementsByClassName('piece');
@@ -44,12 +61,14 @@ var view = (function () {
         }
     };
 
+
     return {
         'getInitialNumberOfPieces': getInitialNumberOfPieces,
         'renderPieces': renderPieces,
         'highlight': highlight,
         'giveNewParty': giveNewParty,
-        'addPiece': addPiece
+        'addPiece': addPiece,
+        'print': print
 
     }
 })();
