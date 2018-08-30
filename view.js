@@ -10,9 +10,8 @@ var view = (function () {
         //donm
         return initialNumber;
     },
-   // numberOfPieces = getInitialNumberOfPieces(),
+    numberOfPieces = getInitialNumberOfPieces(),
         viewPieces= [],
-
     renderPieces = function (pieces) {
         var i, piece;
         for (i = 0; i < pieces.length; i++) {
@@ -22,12 +21,14 @@ var view = (function () {
             viewPieces.push(piece);
         }
     },
-
+    addPiece  = function () {
+        return numberOfPieces++;
+    },
     highlight = function (pieces) {
         var i;
         for (i = 0; i < pieces.length; i++) {
             if (pieces[i].toGuess === true) {
-                viewPieces[i].style.backgroundColor = "#0000FF";
+                viewPieces[i].setAttribute('style' , 'background-color: #0000FF');
             }
         }
        // viewPieces[0].style.backgroundColor= "#0000FF";
@@ -46,6 +47,7 @@ var view = (function () {
         'renderPieces': renderPieces,
         'highlight': highlight,
         'giveNewParty': giveNewParty,
+        'addPiece': addPiece
 
     }
 })();

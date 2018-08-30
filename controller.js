@@ -9,9 +9,13 @@ var controller = function () {
         });
 
         view.renderPieces(game.getPieces());
+        highlight();
        // alert(customerNumberPieces.getAttribute("value"));
     },
 
+    addPiece = function () {
+        view.addPiece();
+    },
 
     highlight = function () {
         view.highlight(game.getPieces());
@@ -19,6 +23,7 @@ var controller = function () {
 
     return {
         'startGame': startGame,
-        'highlight': highlight
+        'highlight': highlight,
+        'addPiece': addPiece
     }
 }();
