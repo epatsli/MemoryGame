@@ -29,14 +29,25 @@ var game = (function () {
 
             amountToGuess=calculateAmountToGuess(pieces.length);
 
-            pieces[0].toGuess = true;
+            for(i = 0; i < amountToGuess; i++){
+                var number = findPiecesToGuess(pieces.length);
+                while (pieces[number].toGuess === true){
+                    number = findPiecesToGuess(pieces.length);
+                }
+                pieces[number].toGuess = true;
+            }
+          //  pieces[0].toGuess = true;
 
             return pieces;
         },
 
        calculateAmountToGuess = function(amountToGuess){
-            return Math.floor(amountToGuess/2 - 1);
-        };
+            return Math.floor(amountToGuess/2) - 1;
+        },
+
+    findPiecesToGuess = function (pieces) {
+        return Math.floor(Math.random() * pieces);
+    };
 
     return {
         'startGame': startGame,

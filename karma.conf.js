@@ -15,9 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'game.js',
-        'view.js',
-        'controller.js',
+        '*.js',
         'test/*.test.js'
 
     ],

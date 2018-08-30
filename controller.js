@@ -7,7 +7,6 @@ var controller = function () {
         game.startGame({
             numberOfPieces: initialNumberOfPieces
         });
-
         view.renderPieces(game.getPieces());
         highlight();
        // alert(customerNumberPieces.getAttribute("value"));
@@ -19,7 +18,7 @@ var controller = function () {
 
     highlight = function () {
         view.highlight(game.getPieces());
-    };
+};
 
     return {
         'startGame': startGame,
