@@ -77,3 +77,11 @@ input[type="number"] {
      opacity: 0.65;
      cursor: not-allowed;
  }
+.correct {
+    background-color: #00FF00;
+}
+
+.incorrect {
+    background-color: #FF0000;
+}
+

@@ -1,16 +1,13 @@
 'use strict'
 
-var Piece = function (isPieceToGuess, pieceNumber) {
-    this.toGuess = isPieceToGuess;
-    this.pieceIsGuessed = false;
-    this.pieceNumber = pieceNumber;
-}
-
 var game = (function () {
 
     var initialNumberOfPieces = 4,
         currentNumberOfPieces,
         amountToGuess=1,
+        current,
+        correctPieces=0,
+        incorrectPieces=0,
         startGame = function (config) {
             if (config && config.numberOfPieces) {
                 currentNumberOfPieces = config.numberOfPieces;
@@ -37,21 +34,44 @@ var game = (function () {
                 pieces[number].toGuess = true;
             }
           //  pieces[0].toGuess = true;
-
+            current=pieces;
             return pieces;
         },
 
-       calculateAmountToGuess = function(amountToGuess){
-            return Math.floor(amountToGuess/2) - 1;
+       calculateAmountToGuess = function(pieceLength){
+           return Math.floor(pieceLength/2) - 1;
+       },
+
+        findPiecesToGuess = function (pieces) {
+            return Math.floor(Math.random() * (pieces-1));
         },
 
-    findPiecesToGuess = function (pieces) {
-        return Math.floor(Math.random() * pieces);
-    };
+
+        checkClickedPiece = function (id) {
+            if(current[id].toGuess == true){
+                current[id].toGuess = false;
+                amountToGuess--;
+                //correctPieces++;
+                return true;
+            }
+           incorrectPieces++;
+            return false;
+        },
+
+        getCorrectPieces = function () {
+            return correctPieces;
+        },
+
+        getAmountToGuess = function () {
+            return amountToGuess;
+        };
 
     return {
         'startGame': startGame,
         'getPieces': getPieces,
-        'calculateAmountToGuess': calculateAmountToGuess
+        'calculateAmountToGuess': calculateAmountToGuess,
+        'checkClickedPiece': checkClickedPiece,
+        'getCorrectPieces': getCorrectPieces,
+        'getAmountToGuess': getAmountToGuess
     }
 })();

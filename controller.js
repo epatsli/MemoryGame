@@ -1,36 +1,48 @@
 'use strict'
 var controller = function () {
     var startGame = function () {
-        var initialNumberOfPieces = view.getInitialNumberOfPieces();
-
+        var initialNumberOfPieces = view.getInitialNumberOfPieces(),
+            state=game.getPieces();
         view.giveNewParty();
         game.startGame({
             numberOfPieces: initialNumberOfPieces
         });
-        view.renderPieces(game.getPieces());
-        highlight();
-        view.printAndAddClick(game.getPieces());
+        view.renderPieces(state);
+        view.highlight(state);
+       // highlight();
+        view.printAndAddClick(state);
        // alert(customerNumberPieces.getAttribute("value"));
     },
-
-
 
     addPiece = function () {
         view.addPiece();
     },
 
+
+/*
     highlight = function () {
         view.highlight(game.getPieces());
     },
+*/
 
-    checkClick = function () {
-        alert("Hello! I am an alert box!!");
+    checkClick = function (id) {
 
+        alert("Hello! I am an alert box!!" + id);
+        if (game.checkClickedPiece(id)) {
+            view.checkCorrectPieces(id, true);
+
+
+
+        }
+        else{ view.checkCorrectPieces(id,false);}
+       // view.checkCorrectPieces(id, game.checkClickedPiece(id));
+
+     //   view.correct(game.getPieces());
     };
 
     return {
         'startGame': startGame,
-        'highlight': highlight,
+      //  'highlight': highlight,
         'addPiece': addPiece,
         'checkClick': checkClick
     }
