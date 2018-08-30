@@ -2,8 +2,13 @@
 var view = (function () {
 
   var getInitialNumberOfPieces = function () {
+      var initialNumber=document.getElementById("initialNumberOfPieces").value;
+      if (initialNumber<4) {
+          initialNumber=4;
+          document.getElementById('initialNumberOfPieces').textContent = initialNumber.toString();
+      }
         //donm
-        return document.getElementById("initialNumberOfPieces").value;
+        return initialNumber;
     },
    // numberOfPieces = getInitialNumberOfPieces(),
         viewPieces= [],
