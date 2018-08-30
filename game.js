@@ -10,6 +10,7 @@ var game = (function () {
 
     var initialNumberOfPieces = 4,
         currentNumberOfPieces,
+        amountToGuess=1,
         startGame = function (config) {
             if (config && config.numberOfPieces) {
                 currentNumberOfPieces = config.numberOfPieces;
@@ -25,12 +26,21 @@ var game = (function () {
             for(i=0; i < currentNumberOfPieces; i++) {
                 pieces.push({});
             }
+
+            amountToGuess=calculateAmountToGuess(pieces.length);
+
             pieces[0].toGuess = true;
+
             return pieces;
+        },
+
+       calculateAmountToGuess = function(amountToGuess){
+            return Math.floor(amountToGuess/2 - 1);
         };
 
     return {
         'startGame': startGame,
-        'getPieces': getPieces
+        'getPieces': getPieces,
+        'calculateAmountToGuess': calculateAmountToGuess
     }
 })();

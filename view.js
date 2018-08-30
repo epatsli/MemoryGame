@@ -5,15 +5,8 @@ var view = (function () {
         //donm
         return document.getElementById("initialNumberOfPieces").value;
     },
-    numberOfPieces = getInitialNumberOfPieces(),
+   // numberOfPieces = getInitialNumberOfPieces(),
         viewPieces= [],
-    addPieces  = function () {
-        return numberOfPieces++;
-    },
-
-    showNumberOfPieces = function () {
-        document.getElementById('numberOfPieces').textContent = numberOfPieces.toString();
-    },
 
     renderPieces = function (pieces) {
         var i, piece;
@@ -26,7 +19,14 @@ var view = (function () {
     },
 
     highlight = function (pieces) {
-        viewPieces[1].style.backgroundColor= "#0000FF";
+        var i;
+        for (i = 0; i < pieces.length; i++) {
+            if (pieces[i].toGuess === true) {
+                viewPieces[i].style.backgroundColor = "#0000FF";
+            }
+        }
+       // viewPieces[0].style.backgroundColor= "#0000FF";
+        // pieces[0].style.backgroundColor= "#0000FF";
     },
 
     giveNewParty = function () {
@@ -38,10 +38,9 @@ var view = (function () {
 
     return {
         'getInitialNumberOfPieces': getInitialNumberOfPieces,
-        'addPieces': addPieces,
-        'showNumberOfPieces': showNumberOfPieces,
         'renderPieces': renderPieces,
         'highlight': highlight,
-        'giveNewParty': giveNewParty
+        'giveNewParty': giveNewParty,
+
     }
 })();

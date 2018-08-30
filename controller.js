@@ -12,10 +12,6 @@ var controller = function () {
        // alert(customerNumberPieces.getAttribute("value"));
     },
 
-    addPieces = function () {
-        view.addPieces();
-      //  view.showNumberOfPieces();
-    },
 
     highlight = function () {
         view.highlight(game.getPieces());
@@ -23,7 +19,6 @@ var controller = function () {
 
     return {
         'startGame': startGame,
-        'addPieces': addPieces,
         'highlight': highlight
     }
 }();
