@@ -30,10 +30,4 @@ describe('Game', function () {
         expect(pieces.length).toBe(6);
     });
 
-
-    function findPiecesToGuess(pieces) {
-        return pieces.filter(function (piece) {
-           return piece.toGuess;
-        });
-    }
 });

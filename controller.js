@@ -21,11 +21,17 @@ var controller = function () {
 
     highlight = function () {
         view.highlight(game.getPieces());
-};
+    },
+
+    checkClick = function () {
+        alert("Hello! I am an alert box!!");
+
+    };
 
     return {
         'startGame': startGame,
         'highlight': highlight,
-        'addPiece': addPiece
+        'addPiece': addPiece,
+        'checkClick': checkClick
     }
 }();

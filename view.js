@@ -19,10 +19,13 @@ var view = (function () {
         for (i = 0; i < pieces.length; i++) {
             piece = document.createElement("div");
             piece.classList.add('piece');
+            piece.setAttribute('id', i);
             document.getElementById('pieces').appendChild(piece);
             viewPieces.push(piece);
         }
     },
+
+
 
     addPiece  = function () {
         return numberOfPieces++;
@@ -35,12 +38,11 @@ var view = (function () {
                 viewPieces[i].setAttribute('style', 'background-color: #0000FF');
             }
         }
-       // alert('Hello '+getTime());
-       // print(pieces);
         },
 
       print=function(pieces){
           setTimeout(function(){printBlack(pieces)}, 1000*getTime());
+          addClick();
       },
 
 
@@ -57,10 +59,18 @@ var view = (function () {
 
     giveNewParty = function () {
         var pieces = document.getElementsByClassName('piece');
-        while (pieces.length > 0) {pieces[0].parentNode.removeChild(pieces[0]);
+        while (pieces.length > 0) {
+            pieces[0].parentNode.removeChild(pieces[0]);
+        }
+    },
+
+    addClick = function () {
+        var piece = document.getElementById('pieces').children,
+        i;
+        for (i = 0; i < piece.length; i++) {
+            document.getElementById(i).setAttribute("onclick", "controller.checkClick()");
         }
     };
-
 
     return {
         'getInitialNumberOfPieces': getInitialNumberOfPieces,
@@ -68,7 +78,8 @@ var view = (function () {
         'highlight': highlight,
         'giveNewParty': giveNewParty,
         'addPiece': addPiece,
-        'print': print
+        'print': print,
+        'addClick': addClick
 
     }
 })();
