@@ -33,7 +33,7 @@ var controller = function () {
 
                 //  addPiece();
                 setTimeout(function () {
-                    alert("Congratulations, you've moved to the next level");
+                    //alert("Congratulations, you've moved to the next level");
                     startGame();
                 }, 500);
             }
@@ -46,16 +46,23 @@ var controller = function () {
         else{ view.checkCorrectPieces(id,false);
             setTimeout(function () {
                 alert("GAME OVER");
+            },100);
+
+            setTimeout(function () {
                 startGame();
-            }, 1000);
+            },1000);
         }
 
-    };
+    },
+        returnInitialNumberOfPiece = function () {
+            return view.getInitialNumberOfPieces();
+        };
 
     return {
         'startGame': startGame,
       //  'highlight': highlight,
         'addPiece': addPiece,
-        'checkClick': checkClick
+        'checkClick': checkClick,
+        'returnInitialNumberOfPiece': returnInitialNumberOfPiece
     }
 }();
