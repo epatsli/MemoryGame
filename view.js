@@ -33,8 +33,8 @@ var view = (function () {
     },
 */
     highlight = function (pieces) {
-        var i;
-      //  document.getElementById("myBtn").disabled = true;
+        var i,id=document.getElementById('myBtn');
+        id.disabled = true;
         for (i = 0; i < pieces.length; i++) {
             if (pieces[i].toGuess === true) {
                 viewPieces[i].setAttribute('style', 'background-color: #0000FF');
@@ -44,10 +44,14 @@ var view = (function () {
 
       printAndAddClick=function(pieces){
           setTimeout(function(){printBlack(pieces)}, 1000*getTime());
-          setTimeout(function(){addClick()}, 1000*getTime());
-     //     document.getElementById("myBtn");
+          setTimeout(function(){addClick(),addClickButton();}, 1000*getTime());
+
       },
 
+      addClickButton = function () {
+        var id=document.getElementById('myBtn');
+          id.removeAttribute('disabled');
+      },
 
       printBlack = function (pieces) {
           var i;
@@ -93,7 +97,8 @@ var view = (function () {
        // 'addPiece': addPiece,
         'printAndAddClick': printAndAddClick,
         'addClick': addClick,
-        'checkCorrectPieces': checkCorrectPieces
+        'checkCorrectPieces': checkCorrectPieces,
+        'addClickButton': addClickButton
 
 
     }
