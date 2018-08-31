@@ -41,7 +41,7 @@ var controller = function () {
                 view.checkCorrectPieces(id, false);
                 view.showInformationGameOver();
                 setTimeout(function () {
-                    startGame();
+                    newGame();
                 }, 1000);
             }
         };

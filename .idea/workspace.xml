@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b376ba41-5c7d-494a-b622-9744fa0510f8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view.js" beforeDir="false" afterPath="$PROJECT_DIR$/view.js" afterDir="false" />
-    </list>
+    <list default="true" id="b376ba41-5c7d-494a-b622-9744fa0510f8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -83,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+            <state relative-caret-position="-1569">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -260,12 +256,12 @@
       <workItem from="1535646333024" duration="403000" />
       <workItem from="1535651868821" duration="9155000" />
       <workItem from="1535691696628" duration="25966000" />
-      <workItem from="1535738612769" duration="2923000" />
+      <workItem from="1535738612769" duration="3544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104598000" />
+    <option name="totallyTimeSpent" value="105219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -354,8 +350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        <state relative-caret-position="-1569">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="17" />
         </state>
       </provider>
     </entry>
