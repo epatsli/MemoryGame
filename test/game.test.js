@@ -10,7 +10,7 @@ describe('Game', function () {
    });
 
     it('one pieces should be to guess after game start', function () {
-        var piecesToGuess;  
+        var piecesToGuess;
         game.startGame();
 
         piecesToGuess = findPiecesToGuess(game.getPieces());
@@ -29,6 +29,29 @@ describe('Game', function () {
 
         expect(pieces.length).toBe(6);
     });
+
+    it('should calculate number of pieces to guess when initial number is 4', function () {
+        var amountToGuess;
+        amountToGuess = game.calculateAmountToGuess(4);
+
+        expect(amountToGuess).toBe(1);
+    });
+
+    it('should calculate number of pieces to guess when initial number is 10', function () {
+        var amountToGuess;
+        amountToGuess = game.calculateAmountToGuess(11);
+
+        expect(amountToGuess).toBe(4);
+    });
+
+    it('should calculate number of pieces to guess when initial number is 25', function () {
+        var amountToGuess;
+        amountToGuess = game.calculateAmountToGuess(25);
+
+        expect(amountToGuess).toBe(11);
+    });
+
+
 
     function findPiecesToGuess(pieces) {
         return pieces.filter(function (piece) {
