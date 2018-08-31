@@ -37,7 +37,7 @@ var controller = function () {
                     setTimeout(function () {
                         alert("Congratulations, you've moved to the next level");
                         startGame();
-                    }, 500);
+                    }, 50);
                 }
                 else {
                     view.addClick();
@@ -47,7 +47,7 @@ var controller = function () {
                 view.checkCorrectPieces(id, false);
                 setTimeout(function () {
                     alert("GAME OVER");
-                }, 100);
+                }, 50);
 
                 setTimeout(function () {
                     startGame();
