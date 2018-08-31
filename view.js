@@ -48,7 +48,8 @@ var view = (function () {
                 printBlack(pieces)
             }, 1000 * getTime());
             setTimeout(function () {
-                addClick(), enableButton();
+                addClick(),
+                enableButton();
             }, 1000 * getTime());
 
         },
@@ -83,6 +84,14 @@ var view = (function () {
                 i;
             for (i = 0; i < piece.length; i++) {
                 document.getElementById(i).setAttribute("onclick", "controller.checkClick(" + i + ")");
+            }
+        },
+
+        removeClick = function () {
+            var piece = document.getElementById('pieces').children,
+                i;
+            for (i = 0; i < piece.length; i++) {
+                document.getElementById(i).removeAttribute('onclick');
             }
         },
 
@@ -128,6 +137,7 @@ var view = (function () {
         'congratulationsToNextLevel': congratulationsToNextLevel,
         'showInformationGameOver': showInformationGameOver,
         'startNewGame': startNewGame,
-        'setInitialNumberOfPiece': setInitialNumberOfPiece
+        'setInitialNumberOfPiece': setInitialNumberOfPiece,
+        'removeClick': removeClick
     }
 })();

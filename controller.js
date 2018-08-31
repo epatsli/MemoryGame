@@ -24,6 +24,7 @@ var controller = function () {
                 view.checkCorrectPieces(id, true);
 
                 if (game.getAmountToGuess() === 0) {
+                    view.removeClick();
                     setTimeout(function () {
                         view.congratulationsToNextLevel();
                     }, 50);
@@ -31,7 +32,7 @@ var controller = function () {
                     game.setCurrentNumberOfPieces(initialNumber);
                     setTimeout(function () {
                         startGame();
-                    }, 50);
+                    }, 1000);
                 }
                 else {
                     view.addClick();
@@ -39,6 +40,7 @@ var controller = function () {
             }
             else {
                 view.checkCorrectPieces(id, false);
+                view.removeClick();
                 view.showInformationGameOver();
                 setTimeout(function () {
                     newGame();
