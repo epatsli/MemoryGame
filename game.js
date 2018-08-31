@@ -6,8 +6,6 @@ var game = (function () {
         currentNumberOfPieces = 4,
         amountToGuess = 1,
         current,
-        correctPieces = 0,
-       // incorrectPieces = 0,
         startGame = function (config) {
             if (config && config.numberOfPieces) {
                 currentNumberOfPieces = config.numberOfPieces;
@@ -33,7 +31,6 @@ var game = (function () {
                 }
                 pieces[number].toGuess = true;
             }
-            //  pieces[0].toGuess = true;
             current = pieces;
             return pieces;
         },
@@ -46,20 +43,13 @@ var game = (function () {
             return Math.floor(Math.random() * pieceLength);
         },
 
-
         checkClickedPiece = function (id) {
             if (current[id].toGuess == true) {
                 current[id].toGuess = false;
                 amountToGuess--;
-                //correctPieces++;
                 return true;
             }
-           // incorrectPieces++;
             return false;
-        },
-
-        getCorrectPieces = function () {
-            return correctPieces;
         },
 
         getAmountToGuess = function () {
@@ -74,7 +64,6 @@ var game = (function () {
         'getPieces': getPieces,
         'calculateAmountToGuess': calculateAmountToGuess,
         'checkClickedPiece': checkClickedPiece,
-        'getCorrectPieces': getCorrectPieces,
         'getAmountToGuess': getAmountToGuess,
         'setCurrentNumberOfPieces': setCurrentNumberOfPieces
     }
