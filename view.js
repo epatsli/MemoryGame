@@ -26,12 +26,6 @@ var view = (function () {
             }
         },
 
-
-        /*
-            addPiece  = function () {
-                return numberOfPieces++;
-            },
-        */
         highlight = function (pieces) {
             var i, id = document.getElementById('myBtn');
             id.disabled = true;
@@ -85,11 +79,9 @@ var view = (function () {
 
         checkCorrectPieces = function (id, click) {
             if (click) {
-                //   document.getElementById(i).classList.add('correct');
                 viewPieces[id].setAttribute('style', 'background-color: #00FF00');
             }
             else {
-                // document.getElementById(i).classList.add('incorrect');
                 viewPieces[id].setAttribute('style', 'background-color: #FF0000');
             }
         };
@@ -99,7 +91,6 @@ var view = (function () {
         'renderPieces': renderPieces,
         'highlight': highlight,
         'giveNewParty': giveNewParty,
-        // 'addPiece': addPiece,
         'printAndAddClick': printAndAddClick,
         'addClick': addClick,
         'checkCorrectPieces': checkCorrectPieces,

@@ -18,18 +18,12 @@ var controller = function () {
             //  view.addClickButton();
         },
 
-        addPiece = function () {
-            view.addPiece();
-        },
-
         checkClick = function (id) {
             var initialNumber;
             if (game.checkClickedPiece(id)) {
                 view.checkCorrectPieces(id, true);
 
-                if (game.getAmountToGuess() === 0) { //===game.getCorrectPieces()) {
-                    //   alert("Congratulations, you've moved to the next level");
-
+                if (game.getAmountToGuess() === 0) {
                     initialNumber = view.getInitialNumberOfPieces();
                     initialNumber++;
                     document.getElementById('initialNumberOfPieces').value = initialNumber;
@@ -54,14 +48,9 @@ var controller = function () {
                 }, 1000);
             }
         };
-    //   returnInitialNumberOfPiece = function () {
-    //       return view.getInitialNumberOfPieces();
-    //   };
 
     return {
         'startGame': startGame,
-        'addPiece': addPiece,
         'checkClick': checkClick
-        // 'returnInitialNumberOfPiece': returnInitialNumberOfPiece
     }
 }();
