@@ -19,8 +19,7 @@ var game = (function () {
         getPieces = function () {
             var i,
                 pieces = [];
-
-            currentNumberOfPieces=controller.returnInitialNumberOfPiece();
+;
             for(i=0; i < currentNumberOfPieces; i++) {
                 pieces.push({});
             }

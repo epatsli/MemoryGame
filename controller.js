@@ -2,12 +2,15 @@
 var controller = function () {
     var startGame = function () {
         var initialNumberOfPieces = view.getInitialNumberOfPieces(),
-        state=game.getPieces();
+            state;
 
-        view.giveNewParty();
         game.startGame({
             numberOfPieces: initialNumberOfPieces
         });
+
+        state = game.getPieces();
+
+        view.giveNewParty();
 
         view.renderPieces(state);
         view.highlight(state);
@@ -17,6 +20,7 @@ var controller = function () {
     addPiece = function () {
         view.addPiece();
     },
+
     checkClick = function (id) {
         var initialNumber;
         if (game.checkClickedPiece(id)) {

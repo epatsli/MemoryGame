@@ -10,7 +10,7 @@ describe('Game', function () {
    });
 
     it('one pieces should be to guess after game start', function () {
-        var piecesToGuess;
+        var piecesToGuess;  
         game.startGame();
 
         piecesToGuess = findPiecesToGuess(game.getPieces());

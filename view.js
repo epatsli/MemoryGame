@@ -34,6 +34,7 @@ var view = (function () {
 */
     highlight = function (pieces) {
         var i;
+      //  document.getElementById("myBtn").disabled = true;
         for (i = 0; i < pieces.length; i++) {
             if (pieces[i].toGuess === true) {
                 viewPieces[i].setAttribute('style', 'background-color: #0000FF');
@@ -44,6 +45,7 @@ var view = (function () {
       printAndAddClick=function(pieces){
           setTimeout(function(){printBlack(pieces)}, 1000*getTime());
           setTimeout(function(){addClick()}, 1000*getTime());
+     //     document.getElementById("myBtn");
       },
 
 
