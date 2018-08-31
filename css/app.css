@@ -1,42 +1,4 @@
 
-body {
-    background: #D3D3D3;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 20px;
-}
-
-.header {
-    background-color: #696969;
-    font-family: 'Permanent Marker', cursive;
-    display: flex;
-    justify-content: center;
-}
-
-input[type=submit] {
-    display: inline-block;
-    padding: 5px 15px;
-    font-size: 18px;
-    font-family: 'Permanent Marker', cursive;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #696969;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-}
-
-input:hover[type=submit] {
-    background-color: #3e8e41
-}
-
-input:active[type=submit] {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
 
 .button {
     display: inline-block;
@@ -82,5 +44,61 @@ input[type="number"] {
     margin-right: 10px;
     display: inline-block;
     border-radius: 12px;
+}
+
+.header{
+    background-color: #A9A9A9;
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid;
+}
+
+body {
+    background: #D3D3D3;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    margin: 0;
+    height: 100%;
+}
+div {
+    background-color: #EEE
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column
+}
+.innercontainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+.body {
+    min-height: 100%;
+    flex-grow: 1;
+    padding: 15px;
+    border: 0px;
+}
+.sidebar{
+    border: 1px solid;
+    align-self: stretch;
+    flex-shrink: 0;
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+
+
+}
+
+.footer {
+    border: 1px solid;
+    height: 50px;
+    margin-top: -50px;
+    flex-shrink: 0;
+
 }
 

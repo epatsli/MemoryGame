@@ -28,7 +28,7 @@ var controller = function () {
                     document.getElementById('initialNumberOfPieces').value = initialNumber;
                     game.setCurrentNumberOfPieces(initialNumber);
                     setTimeout(function () {
-                        alert("Congratulations, you've moved to the next level");
+                        view.congratulationsToNextLevel();
                         startGame();
                     }, 50);
                 }
@@ -38,10 +38,7 @@ var controller = function () {
             }
             else {
                 view.checkCorrectPieces(id, false);
-                setTimeout(function () {
-                    alert("GAME OVER");
-                }, 50);
-
+                view.showInformationGameOver();
                 setTimeout(function () {
                     startGame();
                 }, 1000);

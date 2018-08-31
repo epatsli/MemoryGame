@@ -11,21 +11,33 @@
 
 </head>
 <body>
-<header><h2>Memory game</h2></header>
-<p> Enter the number of pieces:</p>
-<input id="initialNumberOfPieces" type="number" id="numberPieces" min="4" value="4">
+<header class="positionCenter"> </header>
 
-<br>
-<br>
-<p> Enter the backlight time [s]:</p>
-<input id="time" type="number" min="1" value="1">
-<br>
-<br>
+<div class="container">
+    <div class="header"><h1>Memory game</h1></div>
+    <div class="innercontainer">
+        <div class="sidebar">
+            <p> Enter the number of pieces:</p>
+            <input id="initialNumberOfPieces" type="number" id="numberPieces" min="4" value="4">
+            <br>
+            <br>
+            <p> Enter the highlight time [s]:</p>
+            <input id="time" type="number" min="1" value="1">
+            <br>
+            <br>
+            <br>
+            <button class="button" id="highlight" onclick="controller.startGame()">Highlight</button>
+        </div>
+        <div class="body">
+            <div id="pieces"></div>
+        </div>
+    </div>
 
-<button class="button" id="highlight" onclick="controller.startGame()">Highlight</button>
-<div id="pieces"></div>
+ <div class="footer">FOOTER</div>
+
     <script src="game.js"></script>
     <script src="view.js"></script>
     <script src="controller.js"></script>
+</div>
 </body>
 </html>

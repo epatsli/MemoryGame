@@ -83,6 +83,15 @@ var view = (function () {
             else {
                 viewPieces[id].setAttribute('style', 'background-color: #FF0000');
             }
+        },
+
+        congratulationsToNextLevel = function () {
+                alert("Congratulations, you've moved to the next level!");
+        },
+        showInformationGameOver = function () {
+            setTimeout(function () {
+                alert("GAME OVER");
+            }, 50);
         };
 
     return {
@@ -93,6 +102,8 @@ var view = (function () {
         'printAndAddClick': printAndAddClick,
         'addClick': addClick,
         'checkCorrectPieces': checkCorrectPieces,
-        'addClickButton': addClickButton
+        'addClickButton': addClickButton,
+        'congratulationsToNextLevel': congratulationsToNextLevel,
+        'showInformationGameOver':showInformationGameOver
     }
 })();
