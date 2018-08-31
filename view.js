@@ -3,15 +3,16 @@ var view = (function () {
 
   var getInitialNumberOfPieces = function () {
       var initialNumber=document.getElementById("initialNumberOfPieces").value;
+
       if (initialNumber<4) {
           initialNumber=4;
           document.getElementById('initialNumberOfPieces').value = "4";
       }
-        //donm
         return initialNumber;
     },
-    numberOfPieces = getInitialNumberOfPieces(),
-        viewPieces,
+
+    //numberOfPieces = getInitialNumberOfPieces(),
+    viewPieces,
 
     renderPieces = function (pieces) {
         var i, piece;
@@ -26,11 +27,11 @@ var view = (function () {
     },
 
 
-
+/*
     addPiece  = function () {
         return numberOfPieces++;
     },
-
+*/
     highlight = function (pieces) {
         var i;
         for (i = 0; i < pieces.length; i++) {
@@ -57,12 +58,11 @@ var view = (function () {
           return document.getElementById('time').value;
       },
 
-    giveNewParty = function () {
-        var pieces = document.getElementsByClassName('piece');
-        while (pieces.length > 0) {
-            pieces[0].parentNode.removeChild(pieces[0]);
-        }
-    },
+      giveNewParty = function () {
+            var pieces = document.getElementsByClassName('piece');
+            while (pieces.length > 0) {
+                pieces[0].parentNode.removeChild(pieces[0]);
+            }},
 
     addClick = function () {
         var piece = document.getElementById('pieces').children,
@@ -71,8 +71,8 @@ var view = (function () {
             document.getElementById(i).setAttribute("onclick", "controller.checkClick("+i+")");
         }
     },
-    checkCorrectPieces = function (id,click) {
 
+    checkCorrectPieces = function (id,click) {
         if (click) {
          //   document.getElementById(i).classList.add('correct');
             viewPieces[id].setAttribute('style', 'background-color: #00FF00');
@@ -80,9 +80,6 @@ var view = (function () {
         else {
            // document.getElementById(i).classList.add('incorrect');
             viewPieces[id].setAttribute('style', 'background-color: #FF0000');
-
-
-
         }
     };
 
@@ -91,11 +88,11 @@ var view = (function () {
         'renderPieces': renderPieces,
         'highlight': highlight,
         'giveNewParty': giveNewParty,
-        'addPiece': addPiece,
+       // 'addPiece': addPiece,
         'printAndAddClick': printAndAddClick,
         'addClick': addClick,
         'checkCorrectPieces': checkCorrectPieces
-       // 'correct': correct
+
 
     }
 })();

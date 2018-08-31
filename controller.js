@@ -1,8 +1,9 @@
 'use strict'
 var controller = function () {
     var startGame = function () {
-        var initialNumberOfPieces = view.getInitialNumberOfPieces();
-            var state=game.getPieces();
+        var initialNumberOfPieces = view.getInitialNumberOfPieces(),
+        state=game.getPieces();
+
         view.giveNewParty();
         game.startGame({
             numberOfPieces: initialNumberOfPieces
@@ -11,7 +12,6 @@ var controller = function () {
         view.renderPieces(state);
         view.highlight(state);
         view.printAndAddClick(state);
-       // alert(customerNumberPieces.getAttribute("value"));
     },
 
     addPiece = function () {
@@ -19,7 +19,6 @@ var controller = function () {
     },
     checkClick = function (id) {
         var initialNumber;
-       // alert("Hello! I am an alert box!!" + id);
         if (game.checkClickedPiece(id)) {
             view.checkCorrectPieces(id, true);
 
@@ -30,18 +29,14 @@ var controller = function () {
                 initialNumber++;
                 document.getElementById('initialNumberOfPieces').value = initialNumber;
                 game.setInitialNumberOfPieces(initialNumber);
-
-                //  addPiece();
                 setTimeout(function () {
-                    //alert("Congratulations, you've moved to the next level");
+                    alert("Congratulations, you've moved to the next level");
                     startGame();
                 }, 500);
             }
             else{
                 view.addClick();
             }
-
-
         }
         else{ view.checkCorrectPieces(id,false);
             setTimeout(function () {
@@ -52,7 +47,6 @@ var controller = function () {
                 startGame();
             },1000);
         }
-
     },
         returnInitialNumberOfPiece = function () {
             return view.getInitialNumberOfPieces();
@@ -60,7 +54,6 @@ var controller = function () {
 
     return {
         'startGame': startGame,
-      //  'highlight': highlight,
         'addPiece': addPiece,
         'checkClick': checkClick,
         'returnInitialNumberOfPiece': returnInitialNumberOfPiece
