@@ -1,12 +1,13 @@
 'use strict'
 var controller = function () {
     var startGame = function () {
-        var initialNumberOfPieces = view.getInitialNumberOfPieces(),
-            state=game.getPieces();
+        var initialNumberOfPieces = view.getInitialNumberOfPieces();
+            var state=game.getPieces();
         view.giveNewParty();
         game.startGame({
             numberOfPieces: initialNumberOfPieces
         });
+
         view.renderPieces(state);
         view.highlight(state);
         view.printAndAddClick(state);
@@ -26,8 +27,9 @@ var controller = function () {
                 initialNumber = view.getInitialNumberOfPieces();
                 initialNumber++;
                 document.getElementById('initialNumberOfPieces').value = initialNumber;
+                game.setInitialNumberOfPieces(initialNumber);
                 //  addPiece();
-                controller.startGame();
+                startGame();
             }
             else{
                 view.addClick();
@@ -37,7 +39,7 @@ var controller = function () {
         }
         else{ view.checkCorrectPieces(id,false);
             setTimeout(function () {
-                controller.startGame();
+                startGame();
             }, 1000);
         }
 

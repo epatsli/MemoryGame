@@ -3,7 +3,7 @@
 var game = (function () {
 
     var initialNumberOfPieces = 4,
-        currentNumberOfPieces,
+        currentNumberOfPieces=4,
         amountToGuess=1,
         current,
         correctPieces=0,
@@ -63,7 +63,10 @@ var game = (function () {
         },
 
         getAmountToGuess = function () {
-            return amountToGuess;
+        return amountToGuess;
+    },
+        setInitialNumberOfPieces = function (initial) {
+            return currentNumberOfPieces=initial;
         };
 
     return {
@@ -72,6 +75,7 @@ var game = (function () {
         'calculateAmountToGuess': calculateAmountToGuess,
         'checkClickedPiece': checkClickedPiece,
         'getCorrectPieces': getCorrectPieces,
-        'getAmountToGuess': getAmountToGuess
+        'getAmountToGuess': getAmountToGuess,
+        'setInitialNumberOfPieces': setInitialNumberOfPieces
     }
 })();
