@@ -99,6 +99,7 @@ div {
     height: 50px;
     margin-top: -50px;
     flex-shrink: 0;
-
+    text-align: right;
+    padding: 10px;
 }
 

@@ -96,7 +96,9 @@ var view = (function () {
         },
 
         congratulationsToNextLevel = function () {
-            alert("Congratulations, you've moved to the next level!");
+        var currentNumber=document.getElementById('initialNumberOfPieces').value, level;
+        level=currentNumber-3;
+            alert("Congratulations, you've moved to the "+level+" level!");
         },
 
         startNewGame = function () {
