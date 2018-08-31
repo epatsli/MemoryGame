@@ -24,12 +24,18 @@ var controller = function () {
             view.checkCorrectPieces(id, true);
 
             if (game.getAmountToGuess()===0){ //===game.getCorrectPieces()) {
+             //   alert("Congratulations, you've moved to the next level");
+
                 initialNumber = view.getInitialNumberOfPieces();
                 initialNumber++;
                 document.getElementById('initialNumberOfPieces').value = initialNumber;
                 game.setInitialNumberOfPieces(initialNumber);
+
                 //  addPiece();
-                startGame();
+                setTimeout(function () {
+                    alert("Congratulations, you've moved to the next level");
+                    startGame();
+                }, 500);
             }
             else{
                 view.addClick();
@@ -39,6 +45,7 @@ var controller = function () {
         }
         else{ view.checkCorrectPieces(id,false);
             setTimeout(function () {
+                alert("GAME OVER");
                 startGame();
             }, 1000);
         }

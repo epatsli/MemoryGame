@@ -81,6 +81,8 @@ var view = (function () {
            // document.getElementById(i).classList.add('incorrect');
             viewPieces[id].setAttribute('style', 'background-color: #FF0000');
 
+
+
         }
     };
 
