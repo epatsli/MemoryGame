@@ -129,14 +129,67 @@ describe('Game', function () {
 
         for (i = 0; i < pieces.length; i++) {
             if (pieces[i].toGuess === true) {
-                indexOfPiecesToGuess = i;
-                break;
+                return indexOfPiecesToGuess = i;
+              //  break;
             }
         }
 
         //then
         expect(game.checkClickedPiece(indexOfPiecesToGuess)).toBe(true);
         expect(game.checkClickedPiece(indexOfPiecesToGuess)).toBe(false);
+    });
+
+    it('should return false when click incorrect piece in standard initialization', function () {
+
+        //given
+        var pieces,
+            incorrectIndexClick,
+            i;
+        game.startGame();
+
+        //when
+        pieces = game.getPieces();
+
+        for(i = 0; i < pieces.length; i++) {
+            if(pieces[i].toGuess === true) {
+                continue;
+            }
+            else{
+                incorrectIndexClick = i;
+                break;
+            }
+        }
+
+        //then
+        expect(game.checkClickedPiece(incorrectIndexClick)).toBe(false);
+    });
+
+    it('should return false when click incorrect pieces with configured number of pieces', function () {
+
+        //given
+        var pieces,
+            config = {
+                numberOfPieces: 6
+            },
+            i,
+            incorrectIndexClick;
+        game.startGame(config);
+
+        //when
+        pieces = game.getPieces();
+
+        for(i = 0; i<pieces.length; i++) {
+            if(pieces[i].toGuess === true) {
+                continue;
+            }
+            else{
+                incorrectIndexClick = i;
+                break;
+            }
+        }
+
+        //then
+        expect(game.checkClickedPiece(incorrectIndexClick)).toBe(false);
     });
 
     function findPiecesToGuess(pieces) {

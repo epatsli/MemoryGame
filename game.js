@@ -43,7 +43,7 @@ var game = (function () {
         },
 
         findPiecesToGuess = function (pieceLength) {
-            return Math.floor(Math.random() * (pieceLength - 1));
+            return Math.floor(Math.random() * pieceLength);
         },
 
 
