@@ -26,8 +26,8 @@ var view = (function () {
         },
 
         highlight = function (pieces) {
-            var i, id = document.getElementById('highlight');
-            id.disabled = true;
+            var i;
+            disableButton();
             for (i = 0; i < pieces.length; i++) {
                 if (pieces[i].toGuess === true) {
                     viewPieces[i].setAttribute('style', 'background-color: #0000FF');
@@ -35,19 +35,29 @@ var view = (function () {
             }
         },
 
+        disableButton = function () {
+            var idHighlight = document.getElementById('highlight'),
+                idNewGame = document.getElementById('newGame');
+
+            idHighlight.disabled = true;
+            idNewGame.disabled = true;
+        },
+
         printAndAddClick = function (pieces) {
             setTimeout(function () {
                 printBlack(pieces)
             }, 1000 * getTime());
             setTimeout(function () {
-                addClick(), addClickButton();
+                addClick(), enableButton();
             }, 1000 * getTime());
 
         },
 
-        addClickButton = function () {
-            var id = document.getElementById('highlight');
-            id.removeAttribute('disabled');
+        enableButton = function () {
+            var idHighlight = document.getElementById('highlight'),
+                idNewGame = document.getElementById('newGame');
+            idHighlight.removeAttribute('disabled');
+            idNewGame.removeAttribute('disabled');
         },
 
         printBlack = function (pieces) {
@@ -86,12 +96,23 @@ var view = (function () {
         },
 
         congratulationsToNextLevel = function () {
-                alert("Congratulations, you've moved to the next level!");
+            alert("Congratulations, you've moved to the next level!");
         },
+
+        startNewGame = function () {
+            document.getElementById('initialNumberOfPieces').value = "4";
+        },
+
         showInformationGameOver = function () {
             setTimeout(function () {
                 alert("GAME OVER");
             }, 50);
+        },
+        setInitialNumberOfPiece = function () {
+            var initialNumber;
+            initialNumber = getInitialNumberOfPieces();
+            initialNumber++;
+            document.getElementById('initialNumberOfPieces').value = initialNumber;
         };
 
     return {
@@ -102,8 +123,9 @@ var view = (function () {
         'printAndAddClick': printAndAddClick,
         'addClick': addClick,
         'checkCorrectPieces': checkCorrectPieces,
-        'addClickButton': addClickButton,
         'congratulationsToNextLevel': congratulationsToNextLevel,
-        'showInformationGameOver':showInformationGameOver
+        'showInformationGameOver': showInformationGameOver,
+        'startNewGame': startNewGame,
+        'setInitialNumberOfPiece': setInitialNumberOfPiece
     }
 })();

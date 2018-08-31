@@ -9,26 +9,27 @@ var controller = function () {
             });
 
             state = game.getPieces();
-
             view.giveNewParty();
-
             view.renderPieces(state);
             view.highlight(state);
             view.printAndAddClick(state);
         },
-
+        newGame = function () {
+            view.startNewGame();
+            startGame();
+        },
         checkClick = function (id) {
             var initialNumber;
             if (game.checkClickedPiece(id)) {
                 view.checkCorrectPieces(id, true);
 
                 if (game.getAmountToGuess() === 0) {
-                    initialNumber = view.getInitialNumberOfPieces();
-                    initialNumber++;
-                    document.getElementById('initialNumberOfPieces').value = initialNumber;
-                    game.setCurrentNumberOfPieces(initialNumber);
                     setTimeout(function () {
                         view.congratulationsToNextLevel();
+                    }, 50);
+                    initialNumber = view.setInitialNumberOfPiece();
+                    game.setCurrentNumberOfPieces(initialNumber);
+                    setTimeout(function () {
                         startGame();
                     }, 50);
                 }
@@ -47,6 +48,7 @@ var controller = function () {
 
     return {
         'startGame': startGame,
-        'checkClick': checkClick
+        'checkClick': checkClick,
+        'newGame': newGame
     }
 }();

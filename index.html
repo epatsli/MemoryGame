@@ -17,6 +17,10 @@
     <div class="header"><h1>Memory game</h1></div>
     <div class="innercontainer">
         <div class="sidebar">
+            <br>
+            <button class="button" id="newGame" onclick="controller.newGame()">New game</button>
+            <br>
+            <br>
             <p> Enter the number of pieces:</p>
             <input id="initialNumberOfPieces" type="number" id="numberPieces" min="4" value="4">
             <br>
@@ -25,8 +29,8 @@
             <input id="time" type="number" min="1" value="1">
             <br>
             <br>
-            <br>
             <button class="button" id="highlight" onclick="controller.startGame()">Highlight</button>
+
         </div>
         <div class="body">
             <div id="pieces"></div>
