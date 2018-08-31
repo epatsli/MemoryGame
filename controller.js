@@ -15,7 +15,6 @@ var controller = function () {
             view.renderPieces(state);
             view.highlight(state);
             view.printAndAddClick(state);
-            //  view.addClickButton();
         },
 
         checkClick = function (id) {

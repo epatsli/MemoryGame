@@ -11,7 +11,6 @@ var view = (function () {
             return initialNumber;
         },
 
-        //numberOfPieces = getInitialNumberOfPieces(),
         viewPieces,
 
         renderPieces = function (pieces) {
@@ -27,7 +26,7 @@ var view = (function () {
         },
 
         highlight = function (pieces) {
-            var i, id = document.getElementById('myBtn');
+            var i, id = document.getElementById('highlight');
             id.disabled = true;
             for (i = 0; i < pieces.length; i++) {
                 if (pieces[i].toGuess === true) {
@@ -47,7 +46,7 @@ var view = (function () {
         },
 
         addClickButton = function () {
-            var id = document.getElementById('myBtn');
+            var id = document.getElementById('highlight');
             id.removeAttribute('disabled');
         },
 
@@ -95,7 +94,5 @@ var view = (function () {
         'addClick': addClick,
         'checkCorrectPieces': checkCorrectPieces,
         'addClickButton': addClickButton
-
-
     }
 })();
