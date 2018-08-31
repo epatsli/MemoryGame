@@ -7,7 +7,7 @@ var game = (function () {
         amountToGuess = 1,
         current,
         correctPieces = 0,
-        incorrectPieces = 0,
+       // incorrectPieces = 0,
         startGame = function (config) {
             if (config && config.numberOfPieces) {
                 currentNumberOfPieces = config.numberOfPieces;
@@ -42,8 +42,8 @@ var game = (function () {
             return Math.floor(pieceLength / 2) - 1;
         },
 
-        findPiecesToGuess = function (pieces) {
-            return Math.floor(Math.random() * (pieces - 1));
+        findPiecesToGuess = function (pieceLength) {
+            return Math.floor(Math.random() * (pieceLength - 1));
         },
 
 
@@ -54,7 +54,7 @@ var game = (function () {
                 //correctPieces++;
                 return true;
             }
-            incorrectPieces++;
+           // incorrectPieces++;
             return false;
         },
 
