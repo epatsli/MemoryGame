@@ -5,7 +5,7 @@ var game = (function () {
     var initialNumberOfPieces = 4,
         currentNumberOfPieces = 4,
         amountToGuess = 1,
-        current,
+        current=[],
         startGame = function (config) {
             if (config && config.numberOfPieces) {
                 currentNumberOfPieces = config.numberOfPieces;
@@ -17,7 +17,6 @@ var game = (function () {
         getPieces = function () {
             var i,
                 pieces = [];
-            ;
             for (i = 0; i < currentNumberOfPieces; i++) {
                 pieces.push({});
             }

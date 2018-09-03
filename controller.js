@@ -12,7 +12,7 @@ var controller = function () {
             view.giveNewParty();
             view.renderPieces(state);
             view.highlight(state);
-            view.printAndAddClick(state);
+            view.turnOffHighlight(state);
         },
         newGame = function () {
             view.startNewGame();

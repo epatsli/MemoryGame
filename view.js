@@ -43,7 +43,7 @@ var view = (function () {
             idNewGame.disabled = true;
         },
 
-        printAndAddClick = function (pieces) {
+        turnOffHighlight = function (pieces) {
             setTimeout(function () {
                 printBlack(pieces)
             }, 1000 * getTime());
@@ -69,7 +69,12 @@ var view = (function () {
         },
 
         getTime = function () {
-            return document.getElementById('time').value;
+            var time=document.getElementById('time').value;
+            if (time < 1) {
+                time = 1;
+                document.getElementById('time').value = "1";
+            }
+            return time;
         },
 
         giveNewParty = function () {
@@ -131,7 +136,7 @@ var view = (function () {
         'renderPieces': renderPieces,
         'highlight': highlight,
         'giveNewParty': giveNewParty,
-        'printAndAddClick': printAndAddClick,
+        'turnOffHighlight': turnOffHighlight,
         'addClick': addClick,
         'checkCorrectPieces': checkCorrectPieces,
         'congratulationsToNextLevel': congratulationsToNextLevel,
