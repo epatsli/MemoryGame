@@ -145,9 +145,8 @@ var view = (function () {
         },
 
         showNumberToGuess = function (amountToGues) {
-            document.getElementById('toGuess').value=amountToGues;
-        }
-    ;
+            document.getElementById('toGuess').value = amountToGues;
+        };
 
     return {
         'getInitialNumberOfPieces': getInitialNumberOfPieces,
