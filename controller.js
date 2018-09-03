@@ -13,6 +13,7 @@ var controller = function () {
             view.renderPieces(state);
             view.highlight(state);
             view.turnOffHighlight(state);
+            addPiecesToGuess();
         },
         newGame = function () {
             view.startNewGame();
@@ -48,15 +49,21 @@ var controller = function () {
             }
         },
 
-    addPices=function(){
-        view.addPieces();
-        ;
-    };
+        addPices = function () {
+
+            view.addPieces();
+        },
+
+        addPiecesToGuess = function () {
+
+            view.showNumberToGuess(game.getAmountToGuess());
+        };
 
     return {
         'startGame': startGame,
         'checkClick': checkClick,
         'newGame': newGame,
-        'addPices': addPices
+        'addPices': addPices,
+        'addPiecesToGuess': addPiecesToGuess
     }
 }();

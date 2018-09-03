@@ -11,6 +11,7 @@ describe('Controller', function () {
         spyOn(view, 'renderPieces');
         spyOn(view, 'highlight');
         spyOn(view, 'turnOffHighlight');
+        spyOn(view, 'showNumberToGuess').and.returnValue(1);
 
         //when
         controller.startGame();

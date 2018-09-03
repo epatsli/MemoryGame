@@ -8,6 +8,7 @@ var view = (function () {
                 initialNumber = 4;
                 document.getElementById('initialNumberOfPieces').value = "4";
             }
+
             return initialNumber;
         },
 
@@ -79,6 +80,7 @@ var view = (function () {
                 time = 1;
                 document.getElementById('time').value = "1";
             }
+
             return time;
         },
 
@@ -140,7 +142,12 @@ var view = (function () {
             var initialNumber = document.getElementById("initialNumberOfPieces").value;
             initialNumber++;
             document.getElementById('initialNumberOfPieces').value = initialNumber;
-        };
+        },
+
+        showNumberToGuess = function (amountToGues) {
+            document.getElementById('toGuess').value=amountToGues;
+        }
+    ;
 
     return {
         'getInitialNumberOfPieces': getInitialNumberOfPieces,
@@ -155,6 +162,7 @@ var view = (function () {
         'startNewGame': startNewGame,
         'setInitialNumberOfPiece': setInitialNumberOfPiece,
         'removeClick': removeClick,
-        'addPieces': addPieces
+        'addPieces': addPieces,
+        'showNumberToGuess': showNumberToGuess
     }
 })();
