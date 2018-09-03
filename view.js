@@ -37,10 +37,13 @@ var view = (function () {
 
         disableButton = function () {
             var idHighlight = document.getElementById('highlight'),
-                idNewGame = document.getElementById('newGame');
+                idNewGame = document.getElementById('newGame'),
+                idAddPieces = document.getElementById('addPieces');
 
             idHighlight.disabled = true;
             idNewGame.disabled = true;
+            idAddPieces.disabled = true;
+
         },
 
         turnOffHighlight = function (pieces) {
@@ -56,9 +59,11 @@ var view = (function () {
 
         enableButton = function () {
             var idHighlight = document.getElementById('highlight'),
-                idNewGame = document.getElementById('newGame');
+                idNewGame = document.getElementById('newGame'),
+                idAddPieces = document.getElementById('addPieces');
             idHighlight.removeAttribute('disabled');
             idNewGame.removeAttribute('disabled');
+            idAddPieces.removeAttribute('disabled');
         },
 
         printBlack = function (pieces) {
@@ -134,7 +139,7 @@ var view = (function () {
         addPieces = function () {
             var initialNumber = document.getElementById("initialNumberOfPieces").value;
             initialNumber++;
-                document.getElementById('initialNumberOfPieces').value = initialNumber;
+            document.getElementById('initialNumberOfPieces').value = initialNumber;
         };
 
     return {
