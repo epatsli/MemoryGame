@@ -46,11 +46,17 @@ var controller = function () {
                     newGame();
                 }, 1000);
             }
-        };
+        },
+
+    addPices=function(){
+        view.addPieces();
+        ;
+    };
 
     return {
         'startGame': startGame,
         'checkClick': checkClick,
-        'newGame': newGame
+        'newGame': newGame,
+        'addPices': addPices
     }
 }();

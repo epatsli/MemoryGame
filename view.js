@@ -49,7 +49,7 @@ var view = (function () {
             }, 1000 * getTime());
             setTimeout(function () {
                 addClick(),
-                enableButton();
+                    enableButton();
             }, 1000 * getTime());
 
         },
@@ -69,7 +69,7 @@ var view = (function () {
         },
 
         getTime = function () {
-            var time=document.getElementById('time').value;
+            var time = document.getElementById('time').value;
             if (time < 1) {
                 time = 1;
                 document.getElementById('time').value = "1";
@@ -110,9 +110,9 @@ var view = (function () {
         },
 
         congratulationsToNextLevel = function () {
-        var currentNumber=document.getElementById('initialNumberOfPieces').value, level;
-        level=currentNumber-3;
-            alert("Congratulations, you've moved to the "+level+" level!");
+            var currentNumber = document.getElementById('initialNumberOfPieces').value, level;
+            level = currentNumber - 3;
+            alert("Congratulations, you've moved to the " + level + " level!");
         },
 
         startNewGame = function () {
@@ -129,6 +129,12 @@ var view = (function () {
             initialNumber = getInitialNumberOfPieces();
             initialNumber++;
             document.getElementById('initialNumberOfPieces').value = initialNumber;
+        },
+
+        addPieces = function () {
+            var initialNumber = document.getElementById("initialNumberOfPieces").value;
+            initialNumber++;
+                document.getElementById('initialNumberOfPieces').value = initialNumber;
         };
 
     return {
@@ -143,6 +149,7 @@ var view = (function () {
         'showInformationGameOver': showInformationGameOver,
         'startNewGame': startNewGame,
         'setInitialNumberOfPiece': setInitialNumberOfPiece,
-        'removeClick': removeClick
+        'removeClick': removeClick,
+        'addPieces': addPieces
     }
 })();
